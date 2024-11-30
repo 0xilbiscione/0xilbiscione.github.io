@@ -1,0 +1,71 @@
+/* styles.css */
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.hero {
+  background: linear-gradient(120deg, #4c79ff, #6c47ff);
+  color: white;
+  text-align: center;
+  padding: 100px 0;
+}
+
+.hero h1 {
+  font-size: 2.5em;
+}
+
+.cta-buttons a {
+  margin: 10px;
+  padding: 10px 20px;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.btn-primary {
+  background: #ff4d6a;
+}
+
+.btn-secondary {
+  background: #333;
+}
+
+.features, .stats, .cta {
+  text-align: center;
+  padding: 50px 0;
+}
+
+.feature-grid, .stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.feature, .stat {
+  background: #f4f4f4;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #333;
+  color: white;
+}
+
+footer nav a {
+  margin: 0 10px;
+  color: white;
+  text-decoration: none;
+}
