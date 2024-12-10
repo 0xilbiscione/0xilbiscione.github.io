@@ -1,40 +1,55 @@
 /* styles.css */
 
-/* General Reset */
-body {
+/* Reset Styles */
+* {
   margin: 0;
-  font-family: Arial, sans-serif;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
   line-height: 1.6;
   transition: background-color 0.3s, color 0.3s;
 }
 
-/* Dark Mode Styles */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Light Theme */
+body.light {
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+/* Dark Theme */
 body.dark {
   background-color: #121212;
-  color: #f0f0f0;
+  color: #f9f9f9;
 }
 
-body.light {
-  background-color: #ffffff;
-  color: #121212;
-}
-
-/* Dark mode toggle switch */
-.theme-switcher {
-  position: absolute;
-  top: 20px;
-  right: 20px;
+/* Dark Mode Switch */
+.dark-mode-switch {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 100;
 }
 
 .switch {
   position: relative;
   display: inline-block;
-  width: 34px;
+  width: 40px;
   height: 20px;
 }
 
 .switch input {
-  display: none;
+  opacity: 0;
+  width: 0;
+  height: 0;
 }
 
 .slider {
@@ -45,13 +60,12 @@ body.light {
   right: 0;
   bottom: 0;
   background-color: #ccc;
-  transition: 0.4s;
   border-radius: 20px;
 }
 
 .slider:before {
   position: absolute;
-  content: "";
+  content: '';
   height: 14px;
   width: 14px;
   left: 3px;
@@ -62,73 +76,116 @@ body.light {
 }
 
 input:checked + .slider {
-  background-color: #589d80;
+  background-color: #007bff;
 }
 
 input:checked + .slider:before {
-  transform: translateX(14px);
+  transform: translateX(20px);
 }
 
 /* Hero Section */
 .hero {
-  background: linear-gradient(120deg, #0047ff, #000428);
-  color: white;
   text-align: center;
   padding: 100px 20px;
+  background: linear-gradient(135deg, #007bff, #000428);
+  color: white;
 }
 
-.hero h1 {
-  font-size: 2.5em;
+.hero h1 span {
+  color: #ffd700;
 }
 
 .cta-buttons a {
+  display: inline-block;
   margin: 10px;
   padding: 10px 20px;
   text-decoration: none;
   border-radius: 5px;
-  display: inline-block;
+  transition: background 0.3s;
 }
 
 .btn-primary {
-  background: #007bff;
-  color: white;
+  background: #ffd700;
+  color: #000;
+}
+
+.btn-primary:hover {
+  background: #ffae00;
 }
 
 .btn-secondary {
-  background: #121212;
+  background: #333;
   color: white;
 }
 
-/* Features and Stats */
-.features, .stats, .cta {
+.btn-secondary:hover {
+  background: #555;
+}
+
+/* Features Section */
+.features {
   padding: 50px 20px;
   text-align: center;
 }
 
-.feature-grid, .stats-grid {
+.features h2 {
+  margin-bottom: 20px;
+  font-size: 2em;
+}
+
+.feature-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
 }
 
-.feature, .stat {
-  background: #1e1e2e;
-  color: #ffffff;
+.feature {
+  background: #fff;
   padding: 20px;
-  border-radius: 5px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.feature:hover {
+  transform: translateY(-10px);
+}
+
+.feature .icon {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+body.dark .feature {
+  background: #1e1e2e;
+}
+
+/* Call-to-Action Section */
+.cta {
+  text-align: center;
+  padding: 50px 20px;
+  background: linear-gradient(135deg, #000428, #0047ff);
+  color: white;
+}
+
+.cta h2 {
+  margin-bottom: 10px;
 }
 
 /* Footer */
 footer {
-  background: #121212;
-  color: white;
   text-align: center;
   padding: 20px;
+  background: #333;
+  color: white;
 }
 
 footer nav a {
-  color: white;
-  margin: 0 10px;
+  color: #ffd700;
   text-decoration: none;
+  margin: 0 10px;
+}
+
+footer nav a:hover {
+  text-decoration: underline;
 }
